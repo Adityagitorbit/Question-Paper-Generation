@@ -23,3 +23,5 @@ SymPy
 MathJax
 latex2image
 scipy
+pytesseract
+pdfminer

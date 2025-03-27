@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Result</title>
+    <style>
+        body { font-family: Arial, sans-serif; display: flex; height: 100vh; margin: 0; }
+        .container { display: flex; width: 100%; }
+        .processed-text { flex: 1; padding: 20px; border-right: 2px solid #ccc; overflow-y: auto; background-color: #f9f9f9; }
+        .upload-section { flex: 1; padding: 20px; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+        .upload-form { width: 100%; max-width: 400px; }
+        .processed-text-box { white-space: pre-wrap; border: 1px solid #ddd; background-color: #fff; padding: 15px; border-radius: 8px; box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1); height: 100%; overflow-y: auto; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="processed-text">
+            <h2>Processed Text</h2>
+            <div class="processed-text-box">{{ processed_text }}</div>
+        </div>
+        <div class="upload-section">
+            <h2>Upload Another PDF</h2>
+            <form class="upload-form" action="/upload/" method="post" enctype="multipart/form-data">
+                <input type="file" name="file" accept="application/pdf" required>
+                <br><br>
+                <button type="submit">Upload</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
